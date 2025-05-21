@@ -1,67 +1,80 @@
-# March Madness SQL Analysis
-March Madness Analysis of the last 20 years of NCAA Tournament basketball.
+# 🏀 March Madness SQL Analysis
 
 **Author:** Mykeil Tzul  
 **Date:** April 2025
 
+A deep-dive SQL analysis of NCAA Tournament trends from 2016–2025, powered by Snowflake and the Kaggle "March Machine Learning Mania" dataset. From seed performance to Cinderella upsets, this project answers 10 real-world basketball questions using clean, efficient SQL.
+
 ---
 
 ## 🚀 Project Overview
-A ten‑query exploration of NCAA Tournament history (2016–2025) using Snowflake and the Kaggle “March Machine Learning Mania 2025” dataset. Each query answers a distinct question about team performance, upsets, seeds, and more.
+
+This project uses structured SQL queries to explore March Madness data across 10 seasons. Built with real Snowflake queries, it's a great example of:
+
+- 🧠 Data modeling with raw CSVs
+- 🔍 Analytical SQL across multiple joins
+- 📈 Insight-driven storytelling from sports data
+
+---
+
+## 🔍 Query Topics
+
+| File                                       | Question                                                                 |
+|-------------------------------------------|---------------------------------------------------------------------------|
+| **01_seed_final_four_appearances.sql**    | Which seeds most often make the Final Four (last 10 seasons)?             |
+| **02_most_championship_wins.sql**         | Which teams have won the most championships (last 10 seasons)?            |
+| **03_avg_margin_of_victory.sql**          | Which teams had the highest average margin of victory (≥5 wins)?          |
+| **04_underdog_upsets.sql**                | Which seed-9+ teams pulled off the most upsets (≥2 upsets)?               |
+| **05_top5_common_scores.sql**             | What are the top 5 most common total game scores and sample games?        |
+| **06_elite_eight_by_conference.sql**      | Which conferences have the most Elite Eight appearances (last 20 years)?  |
+| **07_teams_most_often_upset.sql**         | Which teams most often lose to lower-seeded opponents?                    |
+| **08_coach_multiple_schools.sql**         | Which coaches led multiple schools to the Sweet 16 or beyond?             |
+| **09_top10_win_pct.sql**                  | Which schools have the top 10 tourney win percentages (≥5 games)?         |
+| **10_consecutive_appearances.sql**        | Which teams boast the longest streaks of consecutive appearances?         |
 
 ---
 
 ## 🧠 Challenges Faced
 
-- **Learning API Requests with nba_api:** Making reliable and structured calls to fetch live player data took several attempts and debugging steps.
+- **Data Loading into Snowflake:** I had to clean and standardize raw Kaggle CSVs before loading them as normalized Snowflake tables.
 
-- **Building a Web App (First Time):** Streamlit was new to me, and setting up a clean, responsive layout took trial and error.
+- **SQL Query Structuring:** Some questions required advanced joins, grouping logic, and window functions — valuable practice for real-world SQL.
 
-- **Deployment Debugging:** Pushing to Streamlit Cloud caused issues due to missing packages and folder structure — I learned to separate app logic from environment setup.
+- **Upset Logic Definition:** Determining an "upset" wasn't straightforward. I defined it by comparing seed numbers and game winners and filtered intelligently for meaningful results.
 
+---
 
-## 📂 Repository Structure
-march-madness-sql-analysis/ ├── queries/ – Ten .sql files, one per analytical question │ ├── 01_seed_final_four_appearances.sql │ ├── 02_most_championship_wins.sql │ ├── 03_avg_margin_of_victory.sql │ ├── 04_underdog_upsets.sql │ ├── 05_top5_common_scores.sql │ ├── 06_elite_eight_by_conference.sql │ ├── 07_teams_most_often_upset.sql │ ├── 08_coach_multiple_schools.sql │ ├── 09_top10_win_pct.sql │ └── 10_consecutive_appearances.sql ├── results/ – (Optional) CSV exports or screenshots of query outputs ├── .gitignore – Local files to ignore └── README.md – This documentation
+## 📂 Project Structure
 
-yaml
-Copy
+march-madness-sql-analysis/
+├── queries/ # All 10 SQL queries
+│ ├── 01_seed_final_four_appearances.sql
+│ ├── ...
+│ └── 10_consecutive_appearances.sql
+├── results/ # Optional CSV exports or screenshots
+├── README.md # This documentation
+└── .gitignore # Git exclusions
+
 
 ---
 
 ## 🗄️ Data Source
-- **Tables Used:**  
-  - `MNCAATourneyCompactResults`  
-  - `MNCAATourneyDetailedResults`  
-  - `MNCAATourneySeeds`  
-  - `MTeams`  
-  - `MTeamCoaches`  
-  - `MTeamConferences`  
-  - `Conferences`  
-- **Platform:** Snowflake (free trial)  
-- **Loading Data:** Loaded from the Kaggle “March Machine Learning Mania 2025” CSVs into Snowflake tables.
 
----
-
-## 🔍 Query List
-
-| File                                       | Question                                                                 |
-|-------------------------------------------|---------------------------------------------------------------------------|
-| **01_seed_final_four_appearances.sql**    | Which seeds most often make the Final Four (last 10 seasons)?             |
-| **02_most_championship_wins.sql**         | Which teams have won the most championships (last 10 seasons)?           |
-| **03_avg_margin_of_victory.sql**          | Which teams had the highest average margin of victory (≥5 wins)?         |
-| **04_underdog_upsets.sql**                | Which seed‑9+ teams pulled off the most upsets (≥2 upsets)?              |
-| **05_top5_common_scores.sql**             | What are the top 5 most common total game scores, and sample games?     |
-| **06_elite_eight_by_conference.sql**      | Which conferences have the most Elite Eight appearances (last 20 seasons)? |
-| **07_teams_most_often_upset.sql**         | Which teams most often lose to lower‑seeded opponents?                   |
-| **08_coach_multiple_schools.sql**         | Which coaches led multiple schools to the Sweet 16 or beyond?            |
-| **09_top10_win_pct.sql**                  | Which schools have the top 10 tournament win percentages (≥5 games)?     |
-| **10_consecutive_appearances.sql**        | Which teams boast the longest streaks of consecutive appearances?        |
+- **Platform:** Snowflake (Free Trial)  
+- **Source:** [Kaggle - March Machine Learning Mania 2025](https://www.kaggle.com/competitions/march-machine-learning-mania-2025/data)  
+- **Tables Used:**
+  - `MNCAATourneyCompactResults`
+  - `MNCAATourneySeeds`
+  - `MTeams`
+  - `MTeamCoaches`
+  - `MTeamConferences`
+  - `Conferences`
 
 ---
 
 ## ⚙️ How to Run
 
-1. **Clone** the repo:
+1. Clone this repo:
    ```bash
    git clone https://github.com/Mykeil-tzul/march-madness-sql-analysis.git
    cd march-madness-sql-analysis
