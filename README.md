@@ -1,7 +1,5 @@
-# march-madness-sql-analysis
-March Madness Analysis of the last 20 years of NCAA Tournament basketball.
-
 # March Madness SQL Analysis
+March Madness Analysis of the last 20 years of NCAA Tournament basketball.
 
 **Author:** Mykeil Tzul  
 **Date:** April 2025
@@ -12,6 +10,15 @@ March Madness Analysis of the last 20 years of NCAA Tournament basketball.
 A ten‑query exploration of NCAA Tournament history (2016–2025) using Snowflake and the Kaggle “March Machine Learning Mania 2025” dataset. Each query answers a distinct question about team performance, upsets, seeds, and more.
 
 ---
+
+## 🧠 Challenges Faced
+
+- **Learning API Requests with nba_api:** Making reliable and structured calls to fetch live player data took several attempts and debugging steps.
+
+- **Building a Web App (First Time):** Streamlit was new to me, and setting up a clean, responsive layout took trial and error.
+
+- **Deployment Debugging:** Pushing to Streamlit Cloud caused issues due to missing packages and folder structure — I learned to separate app logic from environment setup.
+
 
 ## 📂 Repository Structure
 march-madness-sql-analysis/ ├── queries/ – Ten .sql files, one per analytical question │ ├── 01_seed_final_four_appearances.sql │ ├── 02_most_championship_wins.sql │ ├── 03_avg_margin_of_victory.sql │ ├── 04_underdog_upsets.sql │ ├── 05_top5_common_scores.sql │ ├── 06_elite_eight_by_conference.sql │ ├── 07_teams_most_often_upset.sql │ ├── 08_coach_multiple_schools.sql │ ├── 09_top10_win_pct.sql │ └── 10_consecutive_appearances.sql ├── results/ – (Optional) CSV exports or screenshots of query outputs ├── .gitignore – Local files to ignore └── README.md – This documentation
