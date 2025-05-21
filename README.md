@@ -49,7 +49,14 @@ This project uses structured SQL queries to explore March Madness data across 10
 march-madness-sql-analysis/
 ├── queries/ # All 10 SQL queries
 │ ├── 01_seed_final_four_appearances.sql
-│ ├── ...
+│ ├── 02_most_championship_wins.sql
+│ ├── 03_avg_margin_of_victory.sql
+│ ├── 04_underdog_upsets.sql
+│ ├── 05_top5_common_scores.sql
+│ ├── 06_elite_eight_by_conference.sql
+│ ├── 07_teams_most_often_upset.sql
+│ ├── 08_coach_multiple_schools.sql
+│ ├── 09_top10_win_pct.sql
 │ └── 10_consecutive_appearances.sql
 ├── results/ # Optional CSV exports or screenshots
 ├── README.md # This documentation
